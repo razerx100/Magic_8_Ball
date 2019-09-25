@@ -3,7 +3,7 @@ from random import choice
 from time import sleep
 class MagicBall:
     """class containing resources for magic ball"""
-    answers = {1: "As I see it, yes.", 2: "Ask again later.",
+    __answers = {1: "As I see it, yes.", 2: "Ask again later.",
                3: "Better not tell you now.", 4: "Cannot predict now.",
                5: "Concentrate and ask again.", 6: "Don’t count on it.",
                7: "It is certain.", 8: "It is decidedly so.",
@@ -18,4 +18,4 @@ class MagicBall:
         """Lets see what the ball says"""
         print("Thinking.....")
         sleep(2)
-        return choice(list(self.answers.keys()))
+        return self.__answers[choice(list(self.__answers.keys()))]
