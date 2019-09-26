@@ -1,5 +1,4 @@
 """GUI solution"""
-from time import sleep
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt
 from .ball_code import MagicBall
@@ -54,9 +53,10 @@ class MainWindow(QMainWindow):
 
     def ask_button(self):
         """fuction for button Ask"""
-        self.thoughts.setText("Thinking...")
-        true_fact = MagicBall().ball_says()
-        self.facts.setText(true_fact)
+        if self.text_box.text():
+            self.thoughts.setText("Thinking...")
+            true_fact = MagicBall().ball_says()
+            self.facts.setText(true_fact)
 
     def clear_text_box(self):
         """clears text box"""
